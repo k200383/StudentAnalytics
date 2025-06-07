@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install azure-identity requests
+          pip install azure-identity requests python-dotenv
 
       - name: Trigger Fabric pipeline
         env:
