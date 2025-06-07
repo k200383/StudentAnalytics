@@ -29,4 +29,4 @@ jobs:
           FABRIC_WORKSPACE_ID: ${{ secrets.FABRIC_WORKSPACE_ID }}
           FABRIC_PIPELINE_ID: ${{ secrets.FABRIC_PIPELINE_ID }}
         run: |
-          python trigger_pipeline.py
+          python trigger_pipelines.py
