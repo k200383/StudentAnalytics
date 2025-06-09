@@ -73,7 +73,4 @@ Implemented on `gold_overdue` to restrict access to only specific columns for ce
 4. Update the `.env` file with your pipeline and app credentials.
 5. Trigger the pipeline either manually or by pushing to the `main` branch to execute via GitHub Actions.
 
----
-
-## Repository Structure
 
