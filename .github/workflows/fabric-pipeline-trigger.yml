@@ -2,7 +2,7 @@ name: Run Fabric Pipeline
 
 on:  #define event that triggers workflow
   push:   
-    branches: [ main ]  #workflow triggered when code is pushed to main branch
+    branches: [ main ]  #workflow triggered when code is pushed to main branch. this is CI
 
 jobs:
   trigger_pipeline:  #job name
@@ -28,6 +28,6 @@ jobs:
           FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
           FABRIC_WORKSPACE_ID: ${{ secrets.FABRIC_WORKSPACE_ID }}
           FABRIC_PIPELINE_ID: ${{ secrets.FABRIC_PIPELINE_ID }}
-        run: |
+        run: |  #this is CD as it automates the deployment of fabric data pipeline
           python trigger_pipelines.py  #executes python script which forms POST request to fabric API and triggers pipeline
           
