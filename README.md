@@ -61,7 +61,7 @@ Applied on `gold_notsubmitted` using a security predicate function to restrict d
 Implemented on `gold_overdue` to restrict access to only specific columns for certain users.
 
 ### Object-Level Security
-Applied on `gold_submissionrate` as non-priveleged user cannot view the table unless given priveleges.
+Applied on `gold_submissionrate` as non-priveleged users cannot view the table unless given priveleges.
 
 ### Dynamic Data Masking
 Implemented data masking in `Email` field in `gold_notsubmitted` so that the logged in user can see their email as masked in the form of `kXXX@XXXX.com`, for example.
