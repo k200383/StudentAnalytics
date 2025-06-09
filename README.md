@@ -49,7 +49,7 @@ The ingestion and transformation workflow can be automated using:
 - A Python script (`trigger_pipelines.py`) to programmatically trigger Fabric pipelines via REST API
 - A GitHub Actions workflow (`.github/workflows/fabric-pipeline-trigger.yml`) that runs the pipeline on every push to the `main` branch
 
-Environment variables (client ID, secret, tenant ID, pipeline/workspace ID) are managed via a `.env` file (excluded from version control).
+Environment variables are managed via a `.env` file (excluded from version control).
 
 ---
 
