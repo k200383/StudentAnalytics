@@ -18,6 +18,7 @@ Raw data is ingested using a shortcut to an Azure Data Lake Gen2 folder containi
 - `assignments.csv`
 - `courses.csv`
 - `submissions.csv`
+- `enrollments.csv`
 
 ### Silver Layer  
 Cleaned and joined dataset based on normalized relationships among students, assignments, and submissions. Key fields include:
@@ -33,7 +34,7 @@ Three analytical tables were created:
 
 ## Queries Implemented
 
-SQL queries were written to answer the following business questions:
+PySpark queries were written to answer the following business questions:
 1. Which students did not submit Assignment_101?
 2. What is the submission rate for each course?
 3. How many overdue assignments does each student have?
@@ -74,9 +75,9 @@ Implemented data masking in `Email` field in `gold_notsubmitted` so that the log
 1. Clone this repository.
 2. In Microsoft Fabric, create a new Lakehouse and add a shortcut to the ADLS Gen2 `raw data` folder.
 3. Open and run the notebooks in the following order:
-   - `bronze_notebook.ipynb` – Loads raw CSVs
-   - `silver_notebook.ipynb` – Joins and cleans the data
-   - `gold_notebook.ipynb` – Outputs gold-layer analytical tables
+   - `Bronze_Notebook.ipynb` – Loads raw CSVs
+   - `Silver_Notebook.ipynb` – Joins and cleans the data
+   - `Gold_Notebook.ipynb` – Outputs gold-layer analytical tables
 4. Update the `.env` file with your pipeline and app credentials.
 5. Trigger the pipeline either manually or by pushing to the `main` branch to execute via GitHub Actions.
 
