@@ -1,32 +1,33 @@
 name: Run Fabric Pipeline
 
-on:
-  push:
-    branches: [ main ]
+on:  #define event that triggers workflow
+  push:   
+    branches: [ main ]  #workflow triggered when code is pushed to main branch
 
 jobs:
-  trigger_pipeline:
+  trigger_pipeline:  #job name
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repo
+    steps:  #job consists of series of steps
+      - name: Checkout repo   #downloads code from github repo (trigger_pipelines.py)
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Python   
+        uses: actions/setup-python@v4   #installs python 3.10
         with:
           python-version: '3.10'
 
       - name: Install dependencies
         run: |
-          pip install azure-identity requests python-dotenv
+          pip install azure-identity requests python-dotenv   #required python packages
 
       - name: Trigger Fabric pipeline
-        env:
-          FABRIC_CLIENT_ID: ${{ secrets.FABRIC_CLIENT_ID }}
+        env:    #inject secure values from github secrets
+          FABRIC_CLIENT_ID: ${{ secrets.FABRIC_CLIENT_ID }}  #configured in github secrets
           FABRIC_TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}
           FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
           FABRIC_WORKSPACE_ID: ${{ secrets.FABRIC_WORKSPACE_ID }}
           FABRIC_PIPELINE_ID: ${{ secrets.FABRIC_PIPELINE_ID }}
         run: |
-          python trigger_pipelines.py
+          python trigger_pipelines.py  #executes python script which forms POST request to fabric API and triggers pipeline
+          
