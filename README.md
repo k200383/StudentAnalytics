@@ -10,7 +10,7 @@ The objective is to simulate ingestion, transformation, and modeling of class as
 
 ---
 
-## Architecture
+## Medallion Architecture
 
 ### Bronze Layer  
 Raw data is ingested using a shortcut to an Azure Data Lake Gen2 folder containing the following CSV files:
