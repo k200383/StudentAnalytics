@@ -6,7 +6,7 @@ This repository contains a solution to the technical assessment focused on build
 
 ## Overview
 
-The objective is to simulate ingestion, transformation, and modeling of class assignment and submission data. This is achieved by ingesting raw files into a Lakehouse, transforming them through defined layers, and surfacing analytical tables to support downstream AI or reporting use cases.
+The objective is to simulate ingestion, transformation, and modeling of class assignment and submission data. This is achieved by ingesting raw files into a Lakehouse, transforming them through defined layers, and surfacing analytical tables to support downstream AI or reporting use cases. The sample datasets were simulated using a Python script through which CSV files were generated.
 
 ---
 
@@ -54,11 +54,18 @@ Environment variables (client ID, secret, tenant ID, pipeline/workspace ID) are 
 
 ## Security & Governance
 
-### Row-Level Security (RLS)  
+### Row-Level Security  
 Applied on `gold_notsubmitted` using a security predicate function to restrict data based on the logged-in user's email. Admin users can bypass the filter.
 
-### Column-Level Security (CLS)  
+### Column-Level Security
 Implemented on `gold_overdue` to restrict access to only specific columns for certain users.
+
+### Object-Level Security
+Applied on 'gold_submissionrate' as non-priveleged user cannot view the table unless given priveleges.
+
+### Dynamic Data Masking
+Implemented data masking in 'Email' field in 'gold_notsubmitted' so that the logged in user can see their email as masked in the form of 'kXXX@XXXX.com', for example.
+
 
 ---
 
