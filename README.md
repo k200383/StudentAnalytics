@@ -1,8 +1,6 @@
-# StudentAnalytics
+# Student Performance Analytics Platform
 
-# Data Engineer Technical Assessment – Microsoft Fabric
-
-This repository contains a solution to the technical assessment focused on building a structured, automated data pipeline using Microsoft Fabric. The implementation follows the Medallion Architecture (Bronze → Silver → Gold) and applies automation, access control, and query development best practices.
+This repository contains a solution focused on building a structured, automated data pipeline using Microsoft Fabric. The implementation follows the Medallion Architecture (Bronze → Silver → Gold) and applies automation, access control, and query development best practices.
 
 ## Overview
 
